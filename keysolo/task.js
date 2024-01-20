@@ -17,22 +17,14 @@ class Game {
   }
 
   registerEvents() {
-    document.addEventListener('keydown', (event) => {      
-      let keyClick = event.key;
-        if (keyClick == this.currentSymbol.textContent) {
-          this.success();
-        } else {
-          this.fail();
-        }
-    });
-
-    setInterval(() => {
-      this.secondsLeft--;
-      this.updateTimer();
-      if (this.secondsLeft <= 0) {
+    let symbol = this.currentSymbol.textContent;
+    document.addEventListener('keydown', (event) => {
+      if (event.key == symbol) {
+        this.success();
+      } else {
         this.fail();
       }
-    }, 1000);
+    });
   }
 
   success() {
