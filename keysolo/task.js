@@ -17,8 +17,9 @@ class Game {
   }
 
   registerEvents() {
-    let symbol = this.currentSymbol.textContent;
+    
     document.addEventListener('keydown', (event) => {
+      let symbol = this.currentSymbol.textContent;
       if (event.key == symbol) {
         this.success();
       } else {
